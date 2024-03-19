@@ -101,8 +101,11 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Put on table");
             }
-            //add another else if item is trash and currentitemheld != null
-                //Debug.Log("Trash Item");
+            else if (hit.transform.CompareTag("TrashBin") && currentItemHeld != null)
+            {
+                TrashItem(hit.transform);
+                Debug.Log("Trash item");
+            } 
         }
     }
 
@@ -118,7 +121,7 @@ public class PlayerController : MonoBehaviour
         currentItemHeld = null;
     }
 
-    private void TrashItem(Collision item)
+    private void TrashItem(Transform item)
     {
         if (item.gameObject.name == "TrashBin")
         {
