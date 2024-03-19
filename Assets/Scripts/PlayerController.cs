@@ -92,15 +92,17 @@ public class PlayerController : MonoBehaviour
             {
                 PickupItem(hit.transform);
                 Debug.Log("Pickup item");
-            } 
+            }
             else if (hit.transform.CompareTag("Station"))
             {
                 Debug.Log("Activate station");
-            } 
+            }
             else if (hit.transform.CompareTag("Table") && currentItemHeld != null)
             {
                 Debug.Log("Put on table");
             }
+            //add another else if item is trash and currentitemheld != null
+                //Debug.Log("Trash Item");
         }
     }
 
@@ -114,6 +116,14 @@ public class PlayerController : MonoBehaviour
     {
         currentItemHeld.transform.parent = null;
         currentItemHeld = null;
+    }
+
+    private void TrashItem(Collision item)
+    {
+        if (item.gameObject.name == "TrashBin")
+        {
+            Destroy(item.gameObject);
+        }
     }
     #endregion
 }
