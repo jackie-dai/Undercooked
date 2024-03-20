@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class CuttingLerp : MonoBehaviour
 {
     public float cuttingTime = 10f; 
     public Slider progressBar;
