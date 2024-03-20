@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
     {
         if (item.gameObject.name == "TrashBin")
         {
-            Destroy(item.gameObject);
+            Destroy(currentItemHeld);
         }
     }
     #endregion
